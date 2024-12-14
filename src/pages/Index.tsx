@@ -55,13 +55,13 @@ const Index = () => {
   return (
     <>
       <Navbar />
-      <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 pt-16">
+      <div className="min-h-screen bg-gradient-to-b from-black via-purple-900 to-purple-700 pt-16">
         <div className="container py-8 px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 animate-fade-in">
-            <h1 className="text-4xl font-bold text-gray-900 mb-4">
+            <h1 className="text-4xl font-bold text-white mb-4">
               Welcome to Examify
             </h1>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <p className="text-lg text-gray-200 max-w-2xl mx-auto">
               Create personalized exams with custom topics, difficulty levels, and question counts.
               Get instant feedback and track your progress.
             </p>
