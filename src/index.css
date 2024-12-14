@@ -32,7 +32,7 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-gradient-to-b from-[#1A1F2C] via-[#6E59A5] to-[#9b87f5] min-h-screen text-foreground;
     font-feature-settings: "rlig" 1, "calt" 1;
   }
 }

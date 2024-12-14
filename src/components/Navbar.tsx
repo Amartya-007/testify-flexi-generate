@@ -11,10 +11,10 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <nav className="w-full bg-white border-b border-gray-200 px-4 py-2.5 fixed top-0 left-0 right-0 z-50">
+    <nav className="w-full bg-transparent backdrop-blur-sm border-b border-gray-200/10 px-4 py-2.5 fixed top-0 left-0 right-0 z-50">
       <div className="flex flex-wrap justify-between items-center max-w-7xl mx-auto">
         <Link to="/" className="flex items-center">
-          <span className="self-center text-2xl font-semibold text-primary whitespace-nowrap">
+          <span className="self-center text-2xl font-semibold text-white whitespace-nowrap">
             Examify
           </span>
         </Link>
@@ -25,7 +25,7 @@ const Navbar = () => {
               <NavigationMenuItem>
                 <Link
                   to="/"
-                  className="flex items-center text-gray-700 hover:text-primary px-3 py-2 text-sm font-medium"
+                  className="flex items-center text-white/90 hover:text-white px-3 py-2 text-sm font-medium transition-colors"
                 >
                   <Home className="w-4 h-4 mr-2" />
                   Home
@@ -34,7 +34,7 @@ const Navbar = () => {
               <NavigationMenuItem>
                 <Link
                   to="/dashboard"
-                  className="flex items-center text-gray-700 hover:text-primary px-3 py-2 text-sm font-medium"
+                  className="flex items-center text-white/90 hover:text-white px-3 py-2 text-sm font-medium transition-colors"
                 >
                   <LayoutDashboard className="w-4 h-4 mr-2" />
                   Dashboard
@@ -43,7 +43,7 @@ const Navbar = () => {
               <NavigationMenuItem>
                 <Link
                   to="/contact"
-                  className="flex items-center text-gray-700 hover:text-primary px-3 py-2 text-sm font-medium"
+                  className="flex items-center text-white/90 hover:text-white px-3 py-2 text-sm font-medium transition-colors"
                 >
                   <Contact className="w-4 h-4 mr-2" />
                   Contact
@@ -52,7 +52,7 @@ const Navbar = () => {
               <NavigationMenuItem>
                 <Link
                   to="/settings"
-                  className="flex items-center text-gray-700 hover:text-primary px-3 py-2 text-sm font-medium"
+                  className="flex items-center text-white/90 hover:text-white px-3 py-2 text-sm font-medium transition-colors"
                 >
                   <Settings className="w-4 h-4 mr-2" />
                   Settings
