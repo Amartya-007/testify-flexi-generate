@@ -1,113 +1,174 @@
-import { useState } from "react";
-import { ExamCreationForm, ExamConfig } from "@/components/ExamCreationForm";
-import { ExamInterface } from "@/components/ExamInterface";
 import { Button } from "@/components/ui/button";
-import { useToast } from "@/hooks/use-toast";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Brain, Award, User, Sparkles } from "lucide-react";
 import Navbar from "@/components/Navbar";
-
-const generateMockQuestions = (config: ExamConfig) => {
-  return Array(config.questionCount).fill(null).map((_, index) => ({
-    id: index,
-    text: `Sample ${config.topic} question ${index + 1} (${config.difficulty} difficulty)`,
-    options: [
-      "Sample answer 1",
-      "Sample answer 2",
-      "Sample answer 3",
-      "Sample answer 4"
-    ],
-    correctAnswer: Math.floor(Math.random() * 4)
-  }));
-};
+import { Link } from "react-router-dom";
 
 const Index = () => {
-  const [examConfig, setExamConfig] = useState<ExamConfig | null>(null);
-  const [questions, setQuestions] = useState<any[] | null>(null);
-  const [examCompleted, setExamCompleted] = useState(false);
-  const [score, setScore] = useState<number | null>(null);
-  const { toast } = useToast();
-
-  const handleExamCreate = (config: ExamConfig) => {
-    setExamConfig(config);
-    const generatedQuestions = generateMockQuestions(config);
-    setQuestions(generatedQuestions);
-    toast({
-      title: "Exam Created",
-      description: `Created a ${config.difficulty} exam with ${config.questionCount} questions about ${config.topic}.`,
-    });
-  };
-
-  const handleExamComplete = (finalScore: number) => {
-    setScore(finalScore);
-    setExamCompleted(true);
-    toast({
-      title: "Exam Completed!",
-      description: `You scored ${finalScore} out of ${questions?.length} questions.`,
-    });
-  };
-
-  const handleReset = () => {
-    setExamConfig(null);
-    setQuestions(null);
-    setExamCompleted(false);
-    setScore(null);
-  };
-
   return (
-    <>
+    <div className="min-h-screen bg-gradient-to-b from-[#1A1F2C] via-[#6E59A5] to-[#9b87f5]">
       <Navbar />
-      <div className="min-h-screen bg-gradient-to-b from-black via-purple-900 to-purple-700 pt-16">
-        <div className="container py-8 px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12 animate-fade-in">
-            <h1 className="text-4xl font-bold text-white mb-4">
-              Welcome to Examify
-            </h1>
-            <p className="text-lg text-gray-200 max-w-2xl mx-auto">
-              Create personalized exams with custom topics, difficulty levels, and question counts.
-              Get instant feedback and track your progress.
-            </p>
-          </div>
 
-          <div className="max-w-4xl mx-auto">
-            {!examConfig && (
-              <div className="bg-white rounded-lg shadow-lg p-6 animate-fade-in">
-                <ExamCreationForm onSubmit={handleExamCreate} />
-              </div>
-            )}
+      {/* Hero Section */}
+      <section className="relative pt-32 pb-16 md:pt-40 md:pb-24">
+        <div className="container px-4 mx-auto text-center">
+          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 animate-fade-in">
+            Welcome to Examify - Your AI-Powered Exam Platform
+          </h1>
+          <p className="text-xl md:text-2xl text-gray-200 mb-8 max-w-3xl mx-auto animate-fade-in">
+            Generate dynamic, AI-driven questions tailored to your needs.
+          </p>
+          <Link to="/dashboard">
+            <Button size="lg" className="bg-[#4F46E5] hover:bg-[#4338CA] text-white px-8 py-3 rounded-lg text-lg animate-fade-in">
+              Get Started
+            </Button>
+          </Link>
+        </div>
+      </section>
 
-            {examConfig && questions && !examCompleted && (
-              <div className="animate-fade-in">
-                <ExamInterface
-                  questions={questions}
-                  onComplete={handleExamComplete}
-                />
-              </div>
-            )}
-
-            {examCompleted && score !== null && (
-              <div className="text-center space-y-6 animate-fade-in">
-                <div className="bg-white rounded-lg shadow-lg p-8">
-                  <h2 className="text-2xl font-bold mb-4">Exam Results</h2>
-                  <p className="text-4xl font-bold text-success mb-4">
-                    {score} / {questions?.length}
-                  </p>
-                  <p className="text-lg text-gray-600 mb-6">
-                    {score === questions?.length
-                      ? "Perfect score! Excellent work! 🎉"
-                      : score! >= questions!.length * 0.7
-                      ? "Great job! Keep it up! 👏"
-                      : "Good effort! Keep practicing! 💪"}
-                  </p>
-                  <Button onClick={handleReset} className="bg-primary hover:bg-primary/90">
-                    Create New Exam
-                  </Button>
-                </div>
-              </div>
-            )}
+      {/* Key Features Section */}
+      <section className="py-16 bg-white/5 backdrop-blur-sm">
+        <div className="container px-4 mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-12">
+            Key Features
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {features.map((feature, index) => (
+              <Card key={index} className="bg-white/10 border-none text-white hover:bg-white/15 transition-all duration-300">
+                <CardHeader>
+                  <feature.icon className="w-12 h-12 mb-4 text-[#D6BCFA]" />
+                  <CardTitle className="text-xl">{feature.title}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-gray-200">{feature.description}</p>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </div>
-      </div>
-    </>
+      </section>
+
+      {/* Benefits Section */}
+      <section className="py-16">
+        <div className="container px-4 mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-12">
+            Benefits
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {benefits.map((benefit, index) => (
+              <div key={index} className="bg-white/10 p-6 rounded-lg hover:bg-white/15 transition-all duration-300">
+                <h3 className="text-xl font-semibold text-white mb-4">{benefit.title}</h3>
+                <p className="text-gray-200">{benefit.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="py-16 bg-white/5 backdrop-blur-sm">
+        <div className="container px-4 mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-12">
+            What Our Users Say
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {testimonials.map((testimonial, index) => (
+              <div key={index} className="bg-white/10 p-6 rounded-lg">
+                <p className="text-gray-200 mb-4 italic">"{testimonial.text}"</p>
+                <div className="flex items-center">
+                  <div className="ml-3">
+                    <p className="text-white font-semibold">{testimonial.name}</p>
+                    <p className="text-gray-300">{testimonial.role}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="py-8 bg-black/20 backdrop-blur-sm">
+        <div className="container px-4 mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div>
+              <h3 className="text-white font-semibold mb-4">Quick Links</h3>
+              <ul className="space-y-2">
+                <li><Link to="/" className="text-gray-300 hover:text-white">Home</Link></li>
+                <li><Link to="/dashboard" className="text-gray-300 hover:text-white">Dashboard</Link></li>
+                <li><Link to="/contact" className="text-gray-300 hover:text-white">Contact</Link></li>
+                <li><Link to="/settings" className="text-gray-300 hover:text-white">Settings</Link></li>
+              </ul>
+            </div>
+          </div>
+          <div className="mt-8 pt-8 border-t border-gray-800">
+            <p className="text-center text-gray-400">
+              © 2024 Examify. All rights reserved.
+            </p>
+          </div>
+        </div>
+      </footer>
+    </div>
   );
 };
+
+// Data for features section
+const features = [
+  {
+    icon: Brain,
+    title: "Dynamic Question Generation",
+    description: "Create AI-driven questions based on selected topics, difficulty levels, and preferences."
+  },
+  {
+    icon: Award,
+    title: "Real-Time Scoring",
+    description: "Receive instant feedback and scores as soon as you complete your exam."
+  },
+  {
+    icon: User,
+    title: "Personalized Dashboard",
+    description: "Track your progress, view past exams, and manage your learning journey easily."
+  },
+  {
+    icon: Sparkles,
+    title: "Future-Ready Features",
+    description: "AI viva support and AI evaluation features are coming soon!"
+  }
+];
+
+// Data for benefits section
+const benefits = [
+  {
+    title: "Efficient Exam Preparation",
+    description: "Save time and effort with our streamlined exam preparation process."
+  },
+  {
+    title: "AI-Driven Customization",
+    description: "Get personalized content tailored to your specific learning needs."
+  },
+  {
+    title: "Automated Assessment",
+    description: "Benefit from instant, accurate scoring and detailed feedback."
+  }
+];
+
+// Data for testimonials section
+const testimonials = [
+  {
+    text: "Examify has transformed the way I prepare for exams. The AI-generated questions are incredibly accurate!",
+    name: "John Doe",
+    role: "Student"
+  },
+  {
+    text: "The personalized learning experience and instant feedback have greatly improved my study efficiency.",
+    name: "Jane Smith",
+    role: "Graduate Student"
+  },
+  {
+    text: "As an educator, I find Examify's AI capabilities revolutionary for creating assessments.",
+    name: "Dr. Robert Wilson",
+    role: "Professor"
+  }
+];
 
 export default Index;
