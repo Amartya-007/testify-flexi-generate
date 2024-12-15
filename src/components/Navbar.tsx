@@ -25,37 +25,49 @@ const Navbar = () => {
               <NavigationMenuItem>
                 <Link
                   to="/"
-                  className="flex items-center text-white/90 hover:text-white px-3 py-2 text-sm font-medium transition-colors"
+                  className="flex items-center text-white/90 hover:text-white px-3 py-2 text-sm font-medium transition-colors relative group"
                 >
                   <Home className="w-4 h-4 mr-2" />
-                  Home
+                  <span className="relative">
+                    Home
+                    <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-[#D6BCFA] transform scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
+                  </span>
                 </Link>
               </NavigationMenuItem>
               <NavigationMenuItem>
                 <Link
                   to="/dashboard"
-                  className="flex items-center text-white/90 hover:text-white px-3 py-2 text-sm font-medium transition-colors"
+                  className="flex items-center text-white/90 hover:text-white px-3 py-2 text-sm font-medium transition-colors relative group"
                 >
                   <LayoutDashboard className="w-4 h-4 mr-2" />
-                  Dashboard
+                  <span className="relative">
+                    Dashboard
+                    <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-[#D6BCFA] transform scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
+                  </span>
                 </Link>
               </NavigationMenuItem>
               <NavigationMenuItem>
                 <Link
                   to="/contact"
-                  className="flex items-center text-white/90 hover:text-white px-3 py-2 text-sm font-medium transition-colors"
+                  className="flex items-center text-white/90 hover:text-white px-3 py-2 text-sm font-medium transition-colors relative group"
                 >
                   <Contact className="w-4 h-4 mr-2" />
-                  Contact
+                  <span className="relative">
+                    Contact
+                    <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-[#D6BCFA] transform scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
+                  </span>
                 </Link>
               </NavigationMenuItem>
               <NavigationMenuItem>
                 <Link
                   to="/settings"
-                  className="flex items-center text-white/90 hover:text-white px-3 py-2 text-sm font-medium transition-colors"
+                  className="flex items-center text-white/90 hover:text-white px-3 py-2 text-sm font-medium transition-colors relative group"
                 >
                   <Settings className="w-4 h-4 mr-2" />
-                  Settings
+                  <span className="relative">
+                    Settings
+                    <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-[#D6BCFA] transform scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
+                  </span>
                 </Link>
               </NavigationMenuItem>
             </NavigationMenuList>
