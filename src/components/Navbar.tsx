@@ -7,9 +7,11 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const Navbar = () => {
+  const location = useLocation();
+
   return (
     <nav className="w-full bg-transparent backdrop-blur-sm border-b border-gray-200/10 px-4 py-2.5 fixed top-0 left-0 right-0 z-50">
       <div className="flex flex-wrap justify-between items-center max-w-7xl mx-auto">
@@ -25,48 +27,88 @@ const Navbar = () => {
               <NavigationMenuItem>
                 <Link
                   to="/"
-                  className="flex items-center text-white/90 hover:text-white px-3 py-2 text-sm font-medium transition-colors"
+                  className={`group flex items-center px-3 py-2 text-sm font-medium transition-colors ${
+                    location.pathname === "/"
+                      ? "text-white"
+                      : "text-white/90 hover:text-white"
+                  }`}
                 >
                   <Home className="w-4 h-4 mr-2" />
                   <span className="relative">
                     Home
-                    <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-[#D6BCFA] transform scale-x-0 transition-transform duration-300 hover:scale-x-100"></span>
+                    <span
+                      className={`absolute -bottom-1 left-0 w-full h-0.5 bg-[#D6BCFA] transform transition-transform duration-300 ${
+                        location.pathname === "/"
+                          ? "scale-x-100"
+                          : "scale-x-0 group-hover:scale-x-100"
+                      }`}
+                    ></span>
                   </span>
                 </Link>
               </NavigationMenuItem>
               <NavigationMenuItem>
                 <Link
                   to="/dashboard"
-                  className="flex items-center text-white/90 hover:text-white px-3 py-2 text-sm font-medium transition-colors"
+                  className={`group flex items-center px-3 py-2 text-sm font-medium transition-colors ${
+                    location.pathname === "/dashboard"
+                      ? "text-white"
+                      : "text-white/90 hover:text-white"
+                  }`}
                 >
                   <LayoutDashboard className="w-4 h-4 mr-2" />
                   <span className="relative">
                     Dashboard
-                    <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-[#D6BCFA] transform scale-x-0 transition-transform duration-300 hover:scale-x-100"></span>
+                    <span
+                      className={`absolute -bottom-1 left-0 w-full h-0.5 bg-[#D6BCFA] transform transition-transform duration-300 ${
+                        location.pathname === "/dashboard"
+                          ? "scale-x-100"
+                          : "scale-x-0 group-hover:scale-x-100"
+                      }`}
+                    ></span>
                   </span>
                 </Link>
               </NavigationMenuItem>
               <NavigationMenuItem>
                 <Link
                   to="/contact"
-                  className="flex items-center text-white/90 hover:text-white px-3 py-2 text-sm font-medium transition-colors"
+                  className={`group flex items-center px-3 py-2 text-sm font-medium transition-colors ${
+                    location.pathname === "/contact"
+                      ? "text-white"
+                      : "text-white/90 hover:text-white"
+                  }`}
                 >
                   <Contact className="w-4 h-4 mr-2" />
                   <span className="relative">
                     Contact
-                    <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-[#D6BCFA] transform scale-x-0 transition-transform duration-300 hover:scale-x-100"></span>
+                    <span
+                      className={`absolute -bottom-1 left-0 w-full h-0.5 bg-[#D6BCFA] transform transition-transform duration-300 ${
+                        location.pathname === "/contact"
+                          ? "scale-x-100"
+                          : "scale-x-0 group-hover:scale-x-100"
+                      }`}
+                    ></span>
                   </span>
                 </Link>
               </NavigationMenuItem>
               <NavigationMenuItem>
                 <Link
                   to="/settings"
-                  className="flex items-center text-white/90 hover:text-white px-3 py-2 text-sm font-medium transition-colors"
+                  className={`group flex items-center px-3 py-2 text-sm font-medium transition-colors ${
+                    location.pathname === "/settings"
+                      ? "text-white"
+                      : "text-white/90 hover:text-white"
+                  }`}
                 >
                   <Settings className="w-4 h-4 mr-2" />
                   <span className="relative">
                     Settings
-                    <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-[#D6BCFA] transform scale-x-0 transition-transform duration-300 hover:scale-x-100"></span>
+                    <span
+                      className={`absolute -bottom-1 left-0 w-full h-0.5 bg-[#D6BCFA] transform transition-transform duration-300 ${
+                        location.pathname === "/settings"
+                          ? "scale-x-100"
+                          : "scale-x-0 group-hover:scale-x-100"
+                      }`}
+                    ></span>
                   </span>
                 </Link>
               </NavigationMenuItem>
