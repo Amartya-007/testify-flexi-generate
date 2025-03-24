@@ -1,3 +1,4 @@
+
 import { Home, LayoutDashboard, Contact, Settings } from "lucide-react";
 import {
   NavigationMenu,
@@ -27,14 +28,14 @@ const Navbar = () => {
               <NavigationMenuItem>
                 <Link
                   to="/"
-                  className={`group flex items-center px-3 py-2 text-sm font-medium transition-colors ${
+                  className={`flex items-center px-3 py-2 text-sm font-medium transition-colors ${
                     location.pathname === "/"
                       ? "text-white"
                       : "text-white/90 hover:text-white"
                   }`}
                 >
                   <Home className="w-4 h-4 mr-2" />
-                  <span className="relative">
+                  <span className="relative group">
                     Home
                     <span
                       className={`absolute -bottom-1 left-0 w-full h-0.5 bg-[#D6BCFA] transform transition-transform duration-300 ${
@@ -49,14 +50,14 @@ const Navbar = () => {
               <NavigationMenuItem>
                 <Link
                   to="/dashboard"
-                  className={`group flex items-center px-3 py-2 text-sm font-medium transition-colors ${
+                  className={`flex items-center px-3 py-2 text-sm font-medium transition-colors ${
                     location.pathname === "/dashboard"
                       ? "text-white"
                       : "text-white/90 hover:text-white"
                   }`}
                 >
                   <LayoutDashboard className="w-4 h-4 mr-2" />
-                  <span className="relative">
+                  <span className="relative group">
                     Dashboard
                     <span
                       className={`absolute -bottom-1 left-0 w-full h-0.5 bg-[#D6BCFA] transform transition-transform duration-300 ${
@@ -71,14 +72,14 @@ const Navbar = () => {
               <NavigationMenuItem>
                 <Link
                   to="/contact"
-                  className={`group flex items-center px-3 py-2 text-sm font-medium transition-colors ${
+                  className={`flex items-center px-3 py-2 text-sm font-medium transition-colors ${
                     location.pathname === "/contact"
                       ? "text-white"
                       : "text-white/90 hover:text-white"
                   }`}
                 >
                   <Contact className="w-4 h-4 mr-2" />
-                  <span className="relative">
+                  <span className="relative group">
                     Contact
                     <span
                       className={`absolute -bottom-1 left-0 w-full h-0.5 bg-[#D6BCFA] transform transition-transform duration-300 ${
@@ -93,14 +94,14 @@ const Navbar = () => {
               <NavigationMenuItem>
                 <Link
                   to="/settings"
-                  className={`group flex items-center px-3 py-2 text-sm font-medium transition-colors ${
+                  className={`flex items-center px-3 py-2 text-sm font-medium transition-colors ${
                     location.pathname === "/settings"
                       ? "text-white"
                       : "text-white/90 hover:text-white"
                   }`}
                 >
                   <Settings className="w-4 h-4 mr-2" />
-                  <span className="relative">
+                  <span className="relative group">
                     Settings
                     <span
                       className={`absolute -bottom-1 left-0 w-full h-0.5 bg-[#D6BCFA] transform transition-transform duration-300 ${
