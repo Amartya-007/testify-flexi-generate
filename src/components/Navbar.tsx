@@ -35,7 +35,7 @@ const Navbar = () => {
                   }`}
                 >
                   <Home className="w-4 h-4 mr-2" />
-                  <span className="relative group">
+                  <span className="relative">
                     Home
                     <span
                       className={`absolute -bottom-1 left-0 w-full h-0.5 bg-[#D6BCFA] transform transition-transform duration-300 ${
@@ -50,14 +50,14 @@ const Navbar = () => {
               <NavigationMenuItem>
                 <Link
                   to="/dashboard"
-                  className={`flex items-center px-3 py-2 text-sm font-medium transition-colors ${
+                  className={`flex items-center px-3 py-2 text-sm font-medium transition-colors group ${
                     location.pathname === "/dashboard"
                       ? "text-white"
                       : "text-white/90 hover:text-white"
                   }`}
                 >
                   <LayoutDashboard className="w-4 h-4 mr-2" />
-                  <span className="relative group">
+                  <span className="relative">
                     Dashboard
                     <span
                       className={`absolute -bottom-1 left-0 w-full h-0.5 bg-[#D6BCFA] transform transition-transform duration-300 ${
@@ -72,14 +72,14 @@ const Navbar = () => {
               <NavigationMenuItem>
                 <Link
                   to="/contact"
-                  className={`flex items-center px-3 py-2 text-sm font-medium transition-colors ${
+                  className={`flex items-center px-3 py-2 text-sm font-medium transition-colors group ${
                     location.pathname === "/contact"
                       ? "text-white"
                       : "text-white/90 hover:text-white"
                   }`}
                 >
                   <Contact className="w-4 h-4 mr-2" />
-                  <span className="relative group">
+                  <span className="relative">
                     Contact
                     <span
                       className={`absolute -bottom-1 left-0 w-full h-0.5 bg-[#D6BCFA] transform transition-transform duration-300 ${
@@ -94,14 +94,14 @@ const Navbar = () => {
               <NavigationMenuItem>
                 <Link
                   to="/settings"
-                  className={`flex items-center px-3 py-2 text-sm font-medium transition-colors ${
+                  className={`flex items-center px-3 py-2 text-sm font-medium transition-colors group ${
                     location.pathname === "/settings"
                       ? "text-white"
                       : "text-white/90 hover:text-white"
                   }`}
                 >
                   <Settings className="w-4 h-4 mr-2" />
-                  <span className="relative group">
+                  <span className="relative">
                     Settings
                     <span
                       className={`absolute -bottom-1 left-0 w-full h-0.5 bg-[#D6BCFA] transform transition-transform duration-300 ${
