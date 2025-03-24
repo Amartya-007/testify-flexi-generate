@@ -38,12 +38,11 @@ const Navbar = () => {
                   <span className="relative">
                     Home
                     <span
-                      className={`absolute -bottom-1 left-0 w-full h-0.5 bg-[#D6BCFA] transform transition-transform duration-300 ${
-                        location.pathname === "/"
-                          ? "scale-x-100"
-                          : "scale-x-0 group-hover:scale-x-100"
-                      }`}
-                    ></span>
+  className={`absolute -bottom-1 left-0 w-full h-0.5 bg-[#D6BCFA] transform transition-transform duration-300 ${
+    location.pathname === "/" ? "scale-x-100" : "scale-x-0 hover:scale-x-100"
+  }`}
+></span>
+
                   </span>
                 </Link>
               </NavigationMenuItem>
@@ -60,12 +59,13 @@ const Navbar = () => {
                   <span className="relative">
                     Dashboard
                     <span
-                      className={`absolute -bottom-1 left-0 w-full h-0.5 bg-[#D6BCFA] transform transition-transform duration-300 ${
-                        location.pathname === "/dashboard"
-                          ? "scale-x-100"
-                          : "scale-x-0 group-hover:scale-x-100"
-                      }`}
-                    ></span>
+  className={`absolute -bottom-1 left-0 w-full h-0.5 bg-[#D6BCFA] transform transition-transform duration-300 ${
+    location.pathname === "/dashboard"
+      ? "scale-x-100"
+      : "scale-x-0 hover:scale-x-100"
+  }`}
+></span>
+
                   </span>
                 </Link>
               </NavigationMenuItem>
@@ -82,12 +82,13 @@ const Navbar = () => {
                   <span className="relative">
                     Contact
                     <span
-                      className={`absolute -bottom-1 left-0 w-full h-0.5 bg-[#D6BCFA] transform transition-transform duration-300 ${
-                        location.pathname === "/contact"
-                          ? "scale-x-100"
-                          : "scale-x-0 group-hover:scale-x-100"
-                      }`}
-                    ></span>
+  className={`absolute -bottom-1 left-0 w-full h-0.5 bg-[#D6BCFA] transform transition-transform duration-300 ${
+    location.pathname === "/contact"
+      ? "scale-x-100"
+      : "scale-x-0 hover:scale-x-100"
+  }`}
+></span>
+
                   </span>
                 </Link>
               </NavigationMenuItem>
@@ -104,12 +105,13 @@ const Navbar = () => {
                   <span className="relative">
                     Settings
                     <span
-                      className={`absolute -bottom-1 left-0 w-full h-0.5 bg-[#D6BCFA] transform transition-transform duration-300 ${
-                        location.pathname === "/settings"
-                          ? "scale-x-100"
-                          : "scale-x-0 group-hover:scale-x-100"
-                      }`}
-                    ></span>
+  className={`absolute -bottom-1 left-0 w-full h-0.5 bg-[#D6BCFA] transform transition-transform duration-300 ${
+    location.pathname === "/settings"
+      ? "scale-x-100"
+      : "scale-x-0 hover:scale-x-100"
+  }`}
+></span>
+
                   </span>
                 </Link>
               </NavigationMenuItem>
